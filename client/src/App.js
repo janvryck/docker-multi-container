@@ -1,0 +1,28 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { BrowserRouter as Router, route, Link } from 'react-router-dom';
+import Fib from './fib';
+import otherPage from './otherPage';
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <Link to="/">Home</Link>
+            <Link to="/otherpage">Other page</Link>
+          </header>
+          <div>
+            <Route exact path="/" Component={Fib} />
+            <Route path="/otherpage" Component={otherPage} />
+          </div>
+        </div>
+      </Router>
+    );
+  }
+}
+
+export default App;
