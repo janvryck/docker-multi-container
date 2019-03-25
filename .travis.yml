@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run jvanryck/react-test npm test -- --coverage
 
-after_succes:
+after_success:
   - docker build -t jvanryck/multi-client ./client
   - docker build -t jvanryck/multi-nginx ./nginx
   - docker build -t jvanryck/multi-worker ./worker
